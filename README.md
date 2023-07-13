@@ -1,3 +1,0 @@
-# flights
-
-This is epic
