@@ -1,0 +1,135 @@
+* {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+body {
+  background-color: rgb(215,215,215);
+}
+.navTitle{
+  font-size: 65px;
+  color: white;
+  text-align: center;
+  padding-top: 4px;
+  padding-bottom: 9px;
+  
+}
+.navButt {
+  color: rgb(25,34,39);
+  background-color: rgb(255, 255, 255);
+  transition: background-color 0.5s;
+  transition-timing-function: cubic-bezier( 0.15, 0.7, 0.56, 1.02);
+  border: solid rgb(228,159,88) 2px;
+  padding: 4px;
+  border-radius: 4px; 
+  margin: 7px;
+}
+
+.navBar {
+  text-align: center;
+  padding-bottom: 18px;
+  border-bottom: solid rgb(228,159,88) 3px;
+  border-top: solid rgb(228,159,88) 3px;
+  background: rgb(25,34,39);
+
+  
+}
+
+.navButt:hover {
+  transition: background-color 0.8s color 0.8s;
+  transition-timing-function: cubic-bezier(0.33, 0.76, 0.84, 0.69);
+  background-color: rgba(25,34,39, 0.8);
+  color: white;
+}
+
+
+
+.sponsor{
+  height: 50%;
+  width: 50%;
+}
+
+.DEVONLY {
+  position: absolute;
+  color: rgb(215,215,215);
+  z-index: 1;
+  top: 0;
+  right: 0;
+  cursor: default;
+}
+
+.DEVONLY:hover {
+  cursor:  default;
+}
+
+
+
+/* dev Login page */
+.developerlog {
+  background-image: url("../assets/BCKGBIN.gif");
+}
+
+/* Flight Tracking */
+.vatMap {
+ border: solid rgb(228,159,88) 2px;
+ margin-left: 25%;
+ margin-top: 50px;
+ width: 50%;
+ height: 700px;
+
+}
+
+/* Newzealand */
+
+.imgContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nzimg {
+  border: solid rgb(228,159,88) 2px;
+  border-radius: 5px;
+  margin: 40px;
+  margin-top: 210;
+}
+
+.mySlides {
+  z-index: 1;
+  display: block;
+  transition: opacity 1s;
+  border: solid rgb(228,159,88) 2px;
+  width: 40%;
+  position: absolute;
+  transform: translateX(-50%);
+  margin-top: 2.25%;
+  margin-left: 77.5%;
+}
+
+#trackBody {
+  background-image: url(./assets/image1233.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+
+
+.bo787 {
+  display: block;
+  padding-top: 5%;
+  padding-left: 10%;
+  height: 5%;
+  width: 28%;
+}
+
+
+.diamond {
+  display: block;
+  padding-left: 10%;
+  height: 5%;
+  width: 28%;
+}
