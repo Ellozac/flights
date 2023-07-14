@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-  
+<html> 
+
 <head>
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>TRACKING FLIGHTS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviation101</title>
   <link href="../style.css" rel="stylesheet" type="text/css" />
 </head>
+
+<body>
   
-<body id="trackBody">
-  <script src="script.js"></script>
-   <!-- Nav Bar -->
+  
+  <!-- Nav Bar -->
    <div class="navBar" >
-    <h1 class="navTitle"> FLIGHT TRACKING </h1>
+    <h1 class="navTitle">DEVELOPER LOG IN</h1>
     <a class="navButt" href="../index.html">HOME</a>
     <a class="navButt" href="./newZealand.html">NEW ZEALAND 2023</a>
     <a class="navButt" href="./otherFlights.html">OTHER FLIGHTS</a>
@@ -26,12 +26,17 @@
    </div>
   <!-- /Nav Bar -->
 
-  <!-- flight tracking map -->
-    <iframe class="vatMap" src="https://vatsim-map.vercel.app/"></iframe>
-  <!-- flight tracking map -->
+   <div class="signIn">
+    <label class="usernameLabel">Username:</label>
+    <input class="usernameField" type="text" name="username" value="" placeholder="Enter your username" required>
+    <br>
+    <label class="passwordLabel">Password:</label>
+    <input class="passwordField" type="password" name="password" placeholder="Enter your password" required>
+    <br>
+    <button class="verifyDetails">Sign in</button>
+   </div>
 
-  
+
+
+  <script src="script.js"></script>
 </body>
-
-
-</html>

@@ -66,10 +66,7 @@ body {
 
 
 
-/* dev Login page */
-.developerlog {
-  background-image: url("../assets/BCKGBIN.gif");
-}
+
 
 /* Flight Tracking */
 .vatMap {
@@ -132,4 +129,21 @@ body {
   padding-left: 10%;
   height: 5%;
   width: 28%;
+}
+
+
+
+
+
+/* dev Login page */
+.signIn {
+  margin-top: 10px;
+  padding-bottom: 5px;
+  border: solid rgb(228,159,88) 2px; border-radius: 20px;
+  background-color: rgb(25,34,39);
+  color: rgb(255,255,255);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
 }
