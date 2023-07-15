@@ -27,16 +27,18 @@
   <!-- /Nav Bar -->
 
    <div class="signIn">
-    <label class="usernameLabel">Username:</label>
-    <input class="usernameField" type="text" name="username" value="" placeholder="Enter your username" required>
-    <br>
-    <label class="passwordLabel">Password:</label>
-    <input class="passwordField" type="password" name="password" placeholder="Enter your password" required>
-    <br>
-    <button class="verifyDetails">Sign in</button>
+    <form id="loginForm"action="/devLog" method="POST">
+      <label class="usernameLabel">Username:</label>
+      <input id="usernameField" class="usernameField" type="text" name="username" value="" placeholder="Enter your username" required>
+      <br>
+      <label class="passwordLabel">Password:</label>
+      <input id="passwordField" class="passwordField" type="password" name="password" placeholder="Enter your password" required>
+      <br>
+      <button id="buttooon"class="verifyDetails">Sign in</button>
+    </form>
    </div>
 
 
-
-  <script src="script.js"></script>
+   <script src="../script.js"></script>
+  
 </body>
