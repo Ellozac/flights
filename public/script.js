@@ -35,6 +35,7 @@ if (window.location.pathname == "/subpages/devLog.html"){
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(usernamePassword)
+
     })
       .then(response => response.json())
       .then(data => {
