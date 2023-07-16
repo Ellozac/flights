@@ -80,7 +80,7 @@ if (window.location.pathname == '/restrictedSubs/addFlight.html') {
         console.log('Error:', error);
       });
   } else {
-    // No token found, redirect to the login page or perform other actions
+    // No token found, redirect to the login page or perfofrm other actions
     console.log('Not authenticated');
     window.location.href = '/subpages/devLog.html';
   }
