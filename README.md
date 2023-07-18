@@ -6,6 +6,7 @@ prerecusits are node js
 to build first run 
 ```bash
 npm install
+npm i express
 ```
 
 to run 
