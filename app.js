@@ -5,6 +5,7 @@ const app = express();
 require("dotenv").config();
 const passHash = process.env.PASSHASH;
 const secret_key = process.env.SECRET_KEY;
+const port = 8081
 // let db = new sqlite.Database('./database.sqlite');
 // db.run("CREATE TABLE IF NOT EXISTS flights (id INTEGER PRIMARYKEY AUTO INCREMENT);");
 
@@ -56,8 +57,10 @@ app.post('/validateToken', (req, res) => {
    }
  });
  
- 
-var server = app.listen(8081, function () {
+try {
+   port = process.env.PORT
+} 
+var server = app.listen(port, function () {
    var host = server.address().address;
    var port = server.address().port;
 
