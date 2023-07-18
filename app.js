@@ -1,12 +1,12 @@
-const sqlite = require('sqlite3');
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const app = express();
-const passHash = "$2b$10$cI8NmAN0RpgA/RSwu55QX.n4XFOBquCGiEh1fFFu8HnXZVkODynjq";
-const secret_key = "12EUFJNR0s2RfuNxz3TbnTP5yqbJusHCkJ5WoQt1Ms849NvJ5nGWDEBg4zjF";
-let db = new sqlite.Database('./database.sqlite');
-db.run("CREATE TABLE IF NOT EXISTS flights (id INTEGER PRIMARYKEY AUTO INCREMENT);");
+require("dotenv").config();
+const passHash = process.env.PASSHASH;
+const secret_key = process.env.SECRET_KEY;
+// let db = new sqlite.Database('./database.sqlite');
+// db.run("CREATE TABLE IF NOT EXISTS flights (id INTEGER PRIMARYKEY AUTO INCREMENT);");
 
 app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: false }));

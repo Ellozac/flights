@@ -2,7 +2,7 @@ let usernamePassword
 var slideIndex = 0;
 
 function carousel() {
-  if ( window.location.pathname == "/index.html"){
+  if ( window.location.pathname == "/" | window.location.pathname == "/index.html"){
     var i;
     var x = document.getElementsByClassName("mySlides");
     for (i = 0; i < x.length; i++) {
@@ -91,3 +91,15 @@ if (window.location.pathname == '/restrictedSubs/addFlight.html') {
 carousel();
 
 
+if (window.location.pathname === '/restrictedSubs/addFlight.html') {
+  document.getElementById("flightAdd").addEventListener('submit', function(event ) {
+    const pilotName = document.getElementById("") 
+    fetch("/addFlight", { 
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify()
+  })
+  })
+}
