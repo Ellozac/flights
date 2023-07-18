@@ -1,0 +1,21 @@
+project: silly-flights
+source:
+  repoURL: 'https://github.com/Ellozac/flights.git'
+  path: ./kube-man
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: silly-flights
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
+    - Replace=true
+  retry:
+    limit: 1
+    backoff:
+      duration: 5s
+      factor: 2
+      maxDuration: 3m0s
