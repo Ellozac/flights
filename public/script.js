@@ -42,7 +42,8 @@ if (window.location.pathname == "/subpages/devLog.html"){
         // Handle the response data
         console.log(data); // Log the response from the server
         if (data.token) {
-          localStorage.setItem("token", data.token);
+          // localStorage.setItem("token", data.token);
+          document.cookie = "token=" + data.token + "; domain=*.localhost:8081x";
           // Redirect to a success page or perform other actions
           window.location.href = "../restrictedSubs/addFlight.html";
         } else {
@@ -63,6 +64,7 @@ if (window.location.pathname == '/restrictedSubs/addFlight.html') {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
+        
       }
     })
       .then(response => response.json())
