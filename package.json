@@ -201,7 +201,7 @@
     "yallist": "^4.0.0"
   },
   "scripts": {
-    "start": "npx nodemon node.js"
+    "start": "node ."
   },
   "keywords": [],
   "author": "",

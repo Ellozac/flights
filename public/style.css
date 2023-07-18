@@ -132,9 +132,6 @@ body {
 }
 
 
-
-
-
 /* dev Login page */
 .signIn {
   margin-top: 10px;
@@ -146,4 +143,42 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 10%;
+}
+/* Add flight page */
+
+.addFlight {
+  text-align: center;
+  background-color: rgb(25,34,39);
+  border: solid rgb(228,159,88) 2px;
+  border-radius: 20px;
+  width: 350px;
+  margin:auto;
+  margin-top: 50px;
+  padding: 10px;
+  color: rgb(255,255,255);
+}
+
+.addButton {
+  display: grid;
+  width: 345px;
+  align-items: start;
+  justify-content: space-between;
+  border: solid rgb(228,159,88) 2px; border-radius: 20px;
+}
+
+.addButton:hover {
+  background-color: rgb(228,159,88);
+  border: solid white 2px; border-radius: 20px;
+
+}
+
+.subButton {
+  border: solid rgb(228,159,88) 2px; border-radius: 20px;
+  padding: 10px;
+} 
+
+.subButton:hover {
+  cursor: pointer;
+  background-color: rgb(228,159,88);
+  border: solid white 2px; border-radius: 20px;
 }
