@@ -58,8 +58,9 @@ app.post('/validateToken', (req, res) => {
  });
  
 try {
-   port = process.env.PORT
-} 
+   port = process.env.PORT;
+};
+
 var server = app.listen(port, function () {
    var host = server.address().address;
    var port = server.address().port;
