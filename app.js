@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const sqlite = require('sqlite3')
 const app = express();
 require("dotenv").config();
 const passHash = process.env.PASSHASH;
