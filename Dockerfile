@@ -4,4 +4,4 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
-CMD [ "npm", "run", "prod-preview" ]
+CMD [ "PORT=8080", "node", "app.js" ]
