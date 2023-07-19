@@ -68,7 +68,7 @@ process.argv.forEach(function (val, index, array) {
         console.log("setting the port to ", port);
       } else {throw new TypeError("not a number")};
     } catch (e) {
-      console.error(e, "ERROR ACCORED the --port was not set correctly --port <port>");
+      console.error(e, "ERROR OCCURED the --port was not set correctly --port <port>");
     };
   };
 });
