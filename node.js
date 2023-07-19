@@ -1,6 +1,7 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const sqlite = require('sqlite3')
 const app = express();
 require("dotenv").config();
 const passHash = process.env.PASSHASH;
@@ -18,7 +19,7 @@ app.post('/devLog', (req, res) => {
    // Retrieve the username and password from the request body
    const { username, password } = req.body;
 
-   // Perform authentication or any other necessary logic
+   // Perform authentication or any other necessa ry logic
    // Here, for demonstration purposes, we're simply checking if the username and password match a predefined value
    bcrypt.compare(password, passHash, (err, outcome) => {
       if (outcome && username == "QJZ") {
@@ -27,7 +28,7 @@ app.post('/devLog', (req, res) => {
          // Send the token in the response
          res.json({ token });
       } else {
-         res.status(401).send('Invalid username or password');
+         res.status(401).json({ error: 'Invalid username or password' });
       }
    });
 });
