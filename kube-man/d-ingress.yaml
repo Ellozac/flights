@@ -2,27 +2,25 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: silly-flights-ingress
+  name: silly-flight-ingres
   namespace: silly-flights
   annotations:
     kubernetes.io/ingress.class: traefik-external
-    link.argocd.argoproj.io/external-link: 'https://flights.nzdev.org/'
+    link.argocd.argoproj.io/external-link: 'https://flight.nzdev.org/'
 spec:
   entryPoints:
     - websecure
 
   routes:
-    - match: Host(`fligts.nzdev.org`)
+    - match: Host(`flight.nzdev.org`)
       kind: Rule
       services:
-        - name: nzdev-org-serve
+        - name: silly-flight-service
           port: 80
     
-    # - match: Host(`sub.nzdev.org`)
-    #   kind: Rule
-    #   services:
-    #     - name: nzdev-org-serve
-    #       port: 80
-
-  # tls:
-  #   secretName: nzdev-org-production-tls
+    - match: Host(`flights.nzdev.org`)
+      kind: Rule
+      services:
+        - name: silly-flight-service
+          port: 80
+---

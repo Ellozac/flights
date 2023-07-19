@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: ellozac/flights:v0.1
+        image: ellozac/flights:v0.2
         ports:
         - name: web
           containerPort: 8080
