@@ -3,4 +3,4 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-CMD [ "node", "app.js", "--port", "8080" ]
+CMD [ "node", "node.js", "--port", "8080" ]
