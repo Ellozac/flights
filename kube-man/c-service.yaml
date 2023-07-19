@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: slilly-flight-service
+  name: silly-flight-service
   namespace: silly-flights
 spec:
   selector:
