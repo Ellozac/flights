@@ -6,6 +6,7 @@ const app = express();
 require("dotenv").config();
 const passHash = process.env.PASSHASH;
 const secret_key = process.env.SECRET_KEY;
+var port = 8081
 // let db = new sqlite.Database('./database.sqlite');
 // db.run("CREATE TABLE IF NOT EXISTS flights (id INTEGER PRIMARYKEY AUTO INCREMENT);");
 
@@ -56,9 +57,23 @@ app.post('/validateToken', (req, res) => {
      return res.status(500).json({ error: 'Internal server error' });
    }
  });
- 
- 
-var server = app.listen(8081, function () {
+
+// allows on run of server to specify a spicfic port.
+process.argv.forEach(function (val, index, array) {
+  if (val === "--port") {
+    try {
+      const re = /^\d*$/;
+      if (re.test(array.at((index + 1)))) {
+        port = Number(array.at((index + 1)));
+        console.log("setting the port to ", port);
+      } else {throw new TypeError("not a number")};
+    } catch (e) {
+      console.error(e, "ERROR ACCORED the --port was not set correctly --port <port>");
+    };
+  };
+});
+
+var server = app.listen(port, function () {
    var host = server.address().address;
    var port = server.address().port;
 
