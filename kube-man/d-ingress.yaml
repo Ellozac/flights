@@ -17,4 +17,10 @@ spec:
       services:
         - name: silly-flight-service
           port: 80
+    
+    - match: Host(`flights.nzdev.org`)
+      kind: Rule
+      services:
+        - name: silly-flight-service
+          port: 80
 ---
