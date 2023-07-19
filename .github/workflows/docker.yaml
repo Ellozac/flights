@@ -2,14 +2,14 @@ name: Docker imagiser
 
 on:
   workflow_dispatch:
-#  push:
-#    branches:
-#      - 'main'
-#    tags:
-#      - 'v*'
-#  pull_request:
-#    branches:
-#      - 'main'
+ push:
+   branches:
+     - 'main'
+   tags:
+     - 'v*'
+ pull_request:
+   branches:
+     - 'main'
 
 jobs:
   docker:
@@ -30,7 +30,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/nzdev-org
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/flights
       -
         name: Build and push
         uses: docker/build-push-action@v4
