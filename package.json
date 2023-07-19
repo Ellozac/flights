@@ -16,6 +16,7 @@
     "are-we-there-yet": "^2.0.0",
     "array-flatten": "^1.1.1",
     "balanced-match": "^1.0.2",
+    "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "bignumber.js": "^9.0.0",
     "binary-extensions": "^2.2.0",
