@@ -95,12 +95,12 @@ carousel();
 
 if (window.location.pathname === '/restrictedSubs/addFlight.html') {
   document.getElementById("flightAdd").addEventListener('submit', function(event) {
-    const pilotName = document.getElementById("callSign");
-    const aircraft = document.getElementById("typeOfAircraft");
-    const origin = document.getElementById("origin");
-    const destination = document.getElementById("destination");
-    const duration = document.getElementById("duration");
-    const simbrief = document.getElementById("simbrief");    
+    const pilotName = document.getElementById("callSign").value;
+    const aircraft = document.getElementById("typeOfAircraft").value;
+    const origin = document.getElementById("origin").value;
+    const destination = document.getElementById("destination").value;
+    const duration = document.getElementById("duration").value;
+    const simbrief = document.getElementById("simbrief").value;    
     const flightInfo = { pilotName, aircraft, origin, destination, duration, simbrief };
     fetch("/addFlight", { 
     method: "POST",

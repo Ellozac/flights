@@ -58,6 +58,13 @@ app.post('/validateToken', (req, res) => {
    }
  });
 
+
+app.post('/addFlight', (req, res) => {
+  const FLIGHT_INFORMATION = req.body;
+  console.log(FLIGHT_INFORMATION)
+});
+
+
 // allows on run of server to specify a spicfic port.
 process.argv.forEach(function (val, index, array) {
   if (val === "--port") {
