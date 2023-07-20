@@ -1,14 +1,14 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const sqlite = require('sqlite3')
+const sqlite = require('sqlite3').verbose();
 const app = express();
 require("dotenv").config();
 const passHash = process.env.PASSHASH;
 const secret_key = process.env.SECRET_KEY;
 var port = 8081
-// let db = new sqlite.Database('./database.sqlite');
-// db.run("CREATE TABLE IF NOT EXISTS flights (id INTEGER PRIMARYKEY AUTO INCREMENT);");
+let db = new sqlite.Database('database.sqlite');
+db.run("CREATE TABLE IF NOT EXISTS flights (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, pilot TEXT NOT NULL, aircraft TEXT NOT NULL, origin TEXT NOT NULL, destination TEXT NOT NULL, duration INTEGER NOT NULL, simbrief TEXT NOT NULL);");
 
 app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: false }));
@@ -61,7 +61,24 @@ app.post('/validateToken', (req, res) => {
 
 app.post('/addFlight', (req, res) => {
   const FLIGHT_INFORMATION = req.body;
-  console.log(FLIGHT_INFORMATION)
+  for (const i in FLIGHT_INFORMATION) {
+    if (FLIGHT_INFORMATION[i] === '') {
+      return res.status(400).json({ error: `Field cannot be empty` });
+    }
+  }
+
+  db.run(
+    "INSERT INTO flights ( pilot, aircraft, origin, destination, duration, simbrief) VALUES (?,?,?,?,?,?);",[FLIGHT_INFORMATION.pilotName,FLIGHT_INFORMATION.aircraft,FLIGHT_INFORMATION.origin,FLIGHT_INFORMATION.destination,FLIGHT_INFORMATION.duration,FLIGHT_INFORMATION.simbrief],
+    function (err) {
+      if (err) {
+        console.error("Error inserting data:", err);
+        res.sendStatus(500); // Send an error status if the insertion fails
+      } else {
+        console.log("Flight information inserted successfully:", FLIGHT_INFORMATION);
+        res.sendStatus(200); // Send a success status if the insertion is successful
+      }
+    }
+  );
 });
 
 
@@ -79,6 +96,10 @@ process.argv.forEach(function (val, index, array) {
     };
   };
 });
+
+
+
+
 
 var server = app.listen(port, function () {
    var host = server.address().address;

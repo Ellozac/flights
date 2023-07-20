@@ -95,6 +95,7 @@ carousel();
 
 if (window.location.pathname === '/restrictedSubs/addFlight.html') {
   document.getElementById("flightAdd").addEventListener('submit', function(event) {
+    event.preventDefault();
     const pilotName = document.getElementById("callSign").value;
     const aircraft = document.getElementById("typeOfAircraft").value;
     const origin = document.getElementById("origin").value;
@@ -109,5 +110,17 @@ if (window.location.pathname === '/restrictedSubs/addFlight.html') {
     },
     body: JSON.stringify(flightInfo)
   })
+  .then(response => {
+    if (response.status === 200) {
+      document.getElementById("poos").style.backgroundColor = "rgb(130,222,148)";
+      alert("Flight added!")
+      window.location.href = "../subpages/otherFlights.html"
+      
+    } else {
+      alert("ERROR OCCURED please try again with no blank boxes")
+    }
+  })
   })
 }
+
+

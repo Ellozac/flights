@@ -183,3 +183,36 @@ body {
   background-color: rgb(228,159,88);
   border: solid white 2px; border-radius: 20px;
 }
+
+
+
+
+
+
+
+/* CSS for table layout */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for table header */
+th {
+  background-color: #f2f2f2;
+}
+
+/* Style for table data rows */
+td {
+  background-color: #ffffff;
+}
+
+/* Custom class for specific table cells */
+.duration-cell, .simbrief-cell {
+  padding-right: 20px; /* Adjust the padding as needed */
+}
