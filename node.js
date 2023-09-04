@@ -57,7 +57,12 @@ app.post('/validateToken', (req, res) => {
      return res.status(500).json({ error: 'Internal server error' });
    }
  });
-
+app.post("/databaseQuery", (req,res) => {
+  db.each("SELECT * FROM flights", (err, call) => {
+    console.log(call);
+    res.json({call});  
+  });  
+});
 
 app.post('/addFlight', (req, res) => {
   const FLIGHT_INFORMATION = req.body;

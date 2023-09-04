@@ -14,21 +14,25 @@ function carousel() {
     setTimeout(carousel, 4000); 
   };
 }
-
+if (window.location.pathname == "/subpages/otherFlights.html") {
+  fetch("/databaseQuery", {
+    method: "POST",
+    'Content-Type': 'apllication/json'
+    })
+    .then(response => response.json())
+    .then(console.log(response))
+  }
 
 if (window.location.pathname == "/subpages/devLog.html"){
   document.getElementById("loginForm").addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
-    // Get form data
     const username = document.getElementById('usernameField').value;
     const password = document.getElementById('passwordField').value;
     const usernamePassword = { username, password };
     console.log(usernamePassword);
 
-    // Perform your custom logic here
 
-    // Make the fetch request to "/devLog" when the form is submitted
     fetch("/devLog", {
       method: "POST",
       headers: {
