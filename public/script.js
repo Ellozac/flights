@@ -20,7 +20,9 @@ if (window.location.pathname == "/subpages/otherFlights.html") {
     'Content-Type': 'apllication/json'
     })
     .then(response => response.json())
-    .then(console.log(response))
+    .then(response => {
+      console.log(response)
+    })
   }
 
 if (window.location.pathname == "/subpages/devLog.html"){

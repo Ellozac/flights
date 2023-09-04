@@ -60,7 +60,7 @@ app.post('/validateToken', (req, res) => {
 app.post("/databaseQuery", (req,res) => {
   db.each("SELECT * FROM flights", (err, call) => {
     console.log(call);
-    res.json({call});  
+    return res.json({ call });  
   });  
 });
 
